@@ -8,7 +8,7 @@
         <!--Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BoardViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,77 +20,104 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-A0-t49" userLabel="Board View">
                                 <rect key="frame" x="30" y="60" width="540" height="500"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-CQ-Afb" userLabel="Button1">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-CQ-Afb" userLabel="Button1">
                                         <rect key="frame" x="155" y="135" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="MMv-Xt-oF2"/>
                                             <constraint firstAttribute="width" constant="70" id="fpT-1I-bVj"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ej5-AI-TTc"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-cx-VoX" userLabel="Button2">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-cx-VoX" userLabel="Button2">
                                         <rect key="frame" x="235" y="135" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Bta-k9-fZh"/>
                                             <constraint firstAttribute="height" constant="70" id="I1k-Yq-G1x"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIq-Fm-PyK"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVJ-ys-DkB" userLabel="Button3">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVJ-ys-DkB" userLabel="Button3">
                                         <rect key="frame" x="315" y="135" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="ii0-vP-n9w"/>
                                             <constraint firstAttribute="height" constant="70" id="uuC-j8-hil"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0G-me-7mJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le5-ah-3DM" userLabel="Button4">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le5-ah-3DM" userLabel="Button4">
                                         <rect key="frame" x="155" y="215" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="5uX-h7-H9k"/>
                                             <constraint firstAttribute="width" constant="70" id="oxp-Uc-qyT"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KX1-Ux-OUb"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE7-1B-tVb" userLabel="Button5">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE7-1B-tVb" userLabel="Button5">
                                         <rect key="frame" x="235" y="215" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="MRi-31-Sjc"/>
                                             <constraint firstAttribute="width" constant="70" id="gdk-oE-OVu"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Pd-VH-30T"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-ak-YYW" userLabel="Button6">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-ak-YYW" userLabel="Button6">
                                         <rect key="frame" x="315" y="215" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="L8J-eR-8fQ"/>
                                             <constraint firstAttribute="height" constant="70" id="phx-N7-pIw"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7LB-OI-SWB"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJl-hO-rcI" userLabel="Button7">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJl-hO-rcI" userLabel="Button7">
                                         <rect key="frame" x="155" y="295" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="2WI-cD-sIy"/>
                                             <constraint firstAttribute="width" constant="70" id="m1J-2n-ZPu"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Bv-gC-RY3"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huB-P8-KFC" userLabel="Button8">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huB-P8-KFC" userLabel="Button8">
                                         <rect key="frame" x="235" y="295" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="YeY-Iu-x8g"/>
                                             <constraint firstAttribute="height" constant="70" id="a08-RK-qlz"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6B-FJ-akN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-aF-JfQ" userLabel="Button9">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-aF-JfQ" userLabel="Button9">
                                         <rect key="frame" x="315" y="295" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="aIT-om-iA7"/>
                                             <constraint firstAttribute="height" constant="70" id="hLZ-MD-QDg"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O4O-CU-iDB"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4d-TA-PPs" userLabel="top bar">
                                         <rect key="frame" x="155" y="205" width="230" height="10"/>
@@ -166,6 +193,9 @@
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GJ7-L3-CUq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o_X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxw-Gt-mTa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
@@ -183,6 +213,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmU-hS-loF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,6 +234,10 @@
                             <constraint firstItem="AqA-JU-EnP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="uW8-xX-nxV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="B0B-A0-t49" id="q1a-yu-0TX"/>
+                        <outlet property="newGameButton" destination="HaP-ue-fRQ" id="044-ds-ega"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
