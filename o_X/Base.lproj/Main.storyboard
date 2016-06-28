@@ -155,13 +155,50 @@
                                     <constraint firstItem="O3S-ak-YYW" firstAttribute="leading" secondItem="rZu-j7-MlE" secondAttribute="trailing" id="y3G-Bg-nza"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaP-ue-fRQ">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qzr-aF-9Ia"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o_X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxw-Gt-mTa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gPW-q3-itZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqA-JU-EnP">
+                                <rect key="frame" x="20" y="15" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="B0B-A0-t49" secondAttribute="trailing" constant="30" id="9IV-lz-rsw"/>
                             <constraint firstItem="B0B-A0-t49" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="AoH-UO-Oth"/>
+                            <constraint firstAttribute="trailing" secondItem="HaP-ue-fRQ" secondAttribute="trailing" id="BV5-XT-xdk"/>
+                            <constraint firstAttribute="bottom" secondItem="HaP-ue-fRQ" secondAttribute="bottom" id="D20-Jx-E1Z"/>
+                            <constraint firstItem="Kxw-Gt-mTa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fuy-wr-gwL"/>
                             <constraint firstItem="B0B-A0-t49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="Lk4-8Y-m8v"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B0B-A0-t49" secondAttribute="bottom" constant="40" id="NLh-hO-xJt"/>
+                            <constraint firstItem="Kxw-Gt-mTa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VlO-If-Rjh"/>
+                            <constraint firstAttribute="trailing" secondItem="Kxw-Gt-mTa" secondAttribute="trailing" id="ixR-Me-7cG"/>
+                            <constraint firstItem="AqA-JU-EnP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="mZd-5R-gxV"/>
+                            <constraint firstItem="HaP-ue-fRQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="orM-yy-jkz"/>
+                            <constraint firstItem="AqA-JU-EnP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="uW8-xX-nxV"/>
                         </constraints>
                     </view>
                 </viewController>
