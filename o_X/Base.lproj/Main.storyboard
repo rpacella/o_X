@@ -151,6 +151,15 @@
                                             <constraint firstAttribute="height" constant="230" id="xqW-I0-aQm"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-fZ-6gt">
+                                        <rect key="frame" x="198" y="429.5" width="144" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="144" id="eAI-KL-OhQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -162,6 +171,8 @@
                                     <constraint firstItem="QE7-1B-tVb" firstAttribute="centerY" secondItem="B0B-A0-t49" secondAttribute="centerY" id="9id-Gh-Lr9"/>
                                     <constraint firstItem="QE7-1B-tVb" firstAttribute="centerX" secondItem="B0B-A0-t49" secondAttribute="centerX" id="Bhx-qn-4Rj"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="NJl-hO-rcI" secondAttribute="trailing" id="CLd-CH-TUr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ioA-fZ-6gt" secondAttribute="bottom" constant="50" id="Ee8-bc-Ifd"/>
+                                    <constraint firstItem="ioA-fZ-6gt" firstAttribute="centerX" secondItem="B0B-A0-t49" secondAttribute="centerX" id="GXE-zU-nSd"/>
                                     <constraint firstItem="NVJ-ys-DkB" firstAttribute="leading" secondItem="rZu-j7-MlE" secondAttribute="trailing" id="HvY-vL-XK9"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="qmo-CQ-Afb" secondAttribute="trailing" id="RUL-dc-nJ6"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="le5-ah-3DM" secondAttribute="trailing" id="Rb4-Ub-q3Q"/>
@@ -214,7 +225,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmU-hS-loF"/>
+                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EeC-Y1-hqS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,6 +247,16 @@
                     </view>
                     <connections>
                         <outlet property="boardView" destination="B0B-A0-t49" id="q1a-yu-0TX"/>
+                        <outlet property="button0" destination="qmo-CQ-Afb" id="01X-9k-wpq"/>
+                        <outlet property="button1" destination="m3f-cx-VoX" id="lj8-YS-mmm"/>
+                        <outlet property="button2" destination="NVJ-ys-DkB" id="boQ-9d-ZEU"/>
+                        <outlet property="button3" destination="le5-ah-3DM" id="rBy-ag-GR2"/>
+                        <outlet property="button4" destination="QE7-1B-tVb" id="9Nv-Pa-iI8"/>
+                        <outlet property="button5" destination="O3S-ak-YYW" id="nD4-KU-Qbm"/>
+                        <outlet property="button6" destination="NJl-hO-rcI" id="q2L-XC-I5O"/>
+                        <outlet property="button7" destination="huB-P8-KFC" id="rC9-fK-Ghy"/>
+                        <outlet property="button8" destination="X3p-aF-JfQ" id="n8b-YC-v8f"/>
+                        <outlet property="gameStateLabel" destination="ioA-fZ-6gt" id="ZC3-vR-D6m"/>
                         <outlet property="newGameButton" destination="HaP-ue-fRQ" id="044-ds-ega"/>
                     </connections>
                 </viewController>
