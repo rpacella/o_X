@@ -5,12 +5,8 @@
 
 import UIKit
 
-// Need to fix
-class gameObject {
-    init () {
-        gameObject = OXGame()
-    }
-}
+
+var gameObject : OXGame = OXGame()
 
 
 class BoardViewController: UIViewController {
@@ -37,23 +33,23 @@ class BoardViewController: UIViewController {
     @IBAction func cellButtonPressed(sender: AnyObject) {
         
         switch sender.tag {
-        case 1:
+        case 0:
             print("button 1 pressed")
-        case 2:
+        case 1:
             print("button 2 pressed")
-        case 3:
+        case 2:
             print("button 3 pressed")
-        case 4:
+        case 3:
             print("button 4 pressed")
-        case 5:
+        case 4:
             print("button 5 pressed")
-        case 6:
+        case 5:
             print("button 6 pressed")
-        case 7:
+        case 6:
             print("button 7 pressed")
-        case 8:
+        case 7:
             print("button 8 pressed")
-        case 9:
+        case 8:
             print("button 9 pressed")
         default:
             print("default")
