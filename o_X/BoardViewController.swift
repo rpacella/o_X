@@ -5,6 +5,14 @@
 
 import UIKit
 
+// Need to fix
+class gameObject {
+    init () {
+        gameObject = OXGame()
+    }
+}
+
+
 class BoardViewController: UIViewController {
     
     
