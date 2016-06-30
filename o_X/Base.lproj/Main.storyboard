@@ -27,6 +27,9 @@
                                             <constraint firstAttribute="height" constant="70" id="MMv-Xt-oF2"/>
                                             <constraint firstAttribute="width" constant="70" id="fpT-1I-bVj"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ej5-AI-TTc"/>
                                         </connections>
@@ -38,6 +41,9 @@
                                             <constraint firstAttribute="width" constant="70" id="Bta-k9-fZh"/>
                                             <constraint firstAttribute="height" constant="70" id="I1k-Yq-G1x"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIq-Fm-PyK"/>
                                         </connections>
@@ -49,6 +55,9 @@
                                             <constraint firstAttribute="width" constant="70" id="ii0-vP-n9w"/>
                                             <constraint firstAttribute="height" constant="70" id="uuC-j8-hil"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0G-me-7mJ"/>
                                         </connections>
@@ -60,6 +69,9 @@
                                             <constraint firstAttribute="height" constant="70" id="5uX-h7-H9k"/>
                                             <constraint firstAttribute="width" constant="70" id="oxp-Uc-qyT"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KX1-Ux-OUb"/>
                                         </connections>
@@ -71,6 +83,9 @@
                                             <constraint firstAttribute="height" constant="70" id="MRi-31-Sjc"/>
                                             <constraint firstAttribute="width" constant="70" id="gdk-oE-OVu"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Pd-VH-30T"/>
                                         </connections>
@@ -82,6 +97,9 @@
                                             <constraint firstAttribute="width" constant="70" id="L8J-eR-8fQ"/>
                                             <constraint firstAttribute="height" constant="70" id="phx-N7-pIw"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7LB-OI-SWB"/>
                                         </connections>
@@ -93,6 +111,9 @@
                                             <constraint firstAttribute="height" constant="70" id="2WI-cD-sIy"/>
                                             <constraint firstAttribute="width" constant="70" id="m1J-2n-ZPu"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Bv-gC-RY3"/>
                                         </connections>
@@ -104,6 +125,9 @@
                                             <constraint firstAttribute="width" constant="70" id="YeY-Iu-x8g"/>
                                             <constraint firstAttribute="height" constant="70" id="a08-RK-qlz"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6B-FJ-akN"/>
                                         </connections>
@@ -115,6 +139,9 @@
                                             <constraint firstAttribute="width" constant="70" id="aIT-om-iA7"/>
                                             <constraint firstAttribute="height" constant="70" id="hLZ-MD-QDg"/>
                                         </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O4O-CU-iDB"/>
                                         </connections>
@@ -151,15 +178,6 @@
                                             <constraint firstAttribute="height" constant="230" id="xqW-I0-aQm"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-fZ-6gt">
-                                        <rect key="frame" x="198" y="429.5" width="144" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="144" id="eAI-KL-OhQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -171,8 +189,6 @@
                                     <constraint firstItem="QE7-1B-tVb" firstAttribute="centerY" secondItem="B0B-A0-t49" secondAttribute="centerY" id="9id-Gh-Lr9"/>
                                     <constraint firstItem="QE7-1B-tVb" firstAttribute="centerX" secondItem="B0B-A0-t49" secondAttribute="centerX" id="Bhx-qn-4Rj"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="NJl-hO-rcI" secondAttribute="trailing" id="CLd-CH-TUr"/>
-                                    <constraint firstAttribute="bottom" secondItem="ioA-fZ-6gt" secondAttribute="bottom" constant="50" id="Ee8-bc-Ifd"/>
-                                    <constraint firstItem="ioA-fZ-6gt" firstAttribute="centerX" secondItem="B0B-A0-t49" secondAttribute="centerX" id="GXE-zU-nSd"/>
                                     <constraint firstItem="NVJ-ys-DkB" firstAttribute="leading" secondItem="rZu-j7-MlE" secondAttribute="trailing" id="HvY-vL-XK9"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="qmo-CQ-Afb" secondAttribute="trailing" id="RUL-dc-nJ6"/>
                                     <constraint firstItem="kXd-6o-d3Q" firstAttribute="leading" secondItem="le5-ah-3DM" secondAttribute="trailing" id="Rb4-Ub-q3Q"/>
@@ -256,7 +272,6 @@
                         <outlet property="button6" destination="NJl-hO-rcI" id="q2L-XC-I5O"/>
                         <outlet property="button7" destination="huB-P8-KFC" id="rC9-fK-Ghy"/>
                         <outlet property="button8" destination="X3p-aF-JfQ" id="n8b-YC-v8f"/>
-                        <outlet property="gameStateLabel" destination="ioA-fZ-6gt" id="ZC3-vR-D6m"/>
                         <outlet property="newGameButton" destination="HaP-ue-fRQ" id="044-ds-ega"/>
                     </connections>
                 </viewController>

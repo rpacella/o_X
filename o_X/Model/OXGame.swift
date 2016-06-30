@@ -45,9 +45,9 @@ func turnCount() -> Int {
 
 func whoseTurn() -> CellType {
     if (turnCount() % 2 == 0) {
-        return CellType.X
+        return CellType.O
     }
-    else {return CellType.O}
+    else {return CellType.X}
 }
 
 //playMove
@@ -62,63 +62,63 @@ func playMove(cellNum : Int) -> CellType {
 func gameWon() -> Bool {
     
     //top bar
-    if board[0] == board[1] {
-        if ((board[1] == board[2]) && board[0] != CellType.Empty) {
+    if ( (board[0] == board[1]) && (board[1] == board[2]) ) {
+        if (board[0] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     
     //first column
-    if board[0] == board[3] {
-        if ((board[3] == board[6]) && board[0] != CellType.Empty) {
+    if ( (board[0] == board[3]) && (board[3] == board[6]) ) {
+        if (board[0] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     
     //second column
-    if board[1] == board[4] {
-        if ((board[1] == board[7]) && board[1] != CellType.Empty) {
+    if ( (board[1] == board[4]) && (board[1] == board[7]) ) {
+        if (board[1] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     //third column
-    if board[2] == board[5] {
-        if ((board[2] == board[8]) && board[2] != CellType.Empty) {
+    if ( (board[2] == board[5]) && (board[2] == board[8]) ) {
+        if (board[2] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     
     //second row
-    if board[3] == board[4] {
-        if ((board[4] == board[5]) && board[3] != CellType.Empty) {
+    if ( (board[3] == board[4]) && (board[4] == board[5]) ) {
+        if (board[3] != CellType.Empty) {
             return true
         }
         else {return false}
     }
 
     //third row
-    if board[6] == board[7] {
-        if ((board[7] == board[8]) && board[7] != CellType.Empty) {
+    if ( (board[6] == board[7]) && (board[7] == board[8]) ) {
+        if (board[7] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     
     //first diag
-    if board[0] == board[4] {
-        if ((board[4] == board[8]) && board[0] != CellType.Empty) {
+    if ( (board[0] == board[4]) && (board[4] == board[8]) ) {
+        if (board[0] != CellType.Empty) {
             return true
         }
         else {return false}
     }
     
     //second diag
-    if board[2] == board[4] {
-        if ((board[4] == board[6]) && board[2] != CellType.Empty) {
+    if ( (board[2] == board[4]) && (board[4] == board[6]) ) {
+        if (board[2] != CellType.Empty) {
             return true
         }
         else {return false}
