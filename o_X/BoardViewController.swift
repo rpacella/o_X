@@ -123,6 +123,20 @@ class BoardViewController: UIViewController {
     }
 
     @IBAction func logOutButtonPressed(sender: AnyObject) {
-        print("logout button pressed")
+        
+        let storyboard = UIStoryboard(name: "onBoarding", bundle: nil)
+        
+        let viewController = storyboard.instantiateInitialViewController()
+        
+        let application = UIApplication.sharedApplication()
+        
+        let window = application.keyWindow
+        
+        window?.rootViewController = viewController
+        
     }
 }
+
+
+
+

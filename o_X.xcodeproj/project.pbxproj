@@ -14,6 +14,11 @@
 		02F782D01D22966600E3BC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F782CE1D22966600E3BC29 /* LaunchScreen.storyboard */; };
 		BF04589E1D23D1A100468380 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF04589D1D23D1A100468380 /* OXGame.swift */; };
 		BF0458A41D2414FA00468380 /* OXGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458A31D2414FA00468380 /* OXGameController.swift */; };
+		BF0458E81D25607500468380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458E71D25607500468380 /* User.swift */; };
+		BF0458EA1D25615000468380 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458E91D25615000468380 /* UserController.swift */; };
+		BF0458EE1D25BA0A00468380 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */; };
+		BF0458F01D25BA2100468380 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458EF1D25BA2100468380 /* LoginViewController.swift */; };
+		BF04594D1D29CF1A00468380 /* onBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF04594B1D29CF1A00468380 /* onBoarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		02F782D11D22966600E3BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF04589D1D23D1A100468380 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OXGame.swift; path = o_X/Model/OXGame.swift; sourceTree = "<group>"; };
 		BF0458A31D2414FA00468380 /* OXGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OXGameController.swift; sourceTree = "<group>"; };
+		BF0458E71D25607500468380 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = o_X/Model/User.swift; sourceTree = "<group>"; };
+		BF0458E91D25615000468380 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = o_X/Model/UserController.swift; sourceTree = "<group>"; };
+		BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BF0458EF1D25BA2100468380 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF04594C1D29CF1A00468380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/onBoarding.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +53,11 @@
 			isa = PBXGroup;
 			children = (
 				BF04589D1D23D1A100468380 /* OXGame.swift */,
+				BF0458E71D25607500468380 /* User.swift */,
+				BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */,
+				BF0458EF1D25BA2100468380 /* LoginViewController.swift */,
 				BF0458A31D2414FA00468380 /* OXGameController.swift */,
+				BF0458E91D25615000468380 /* UserController.swift */,
 				02F782C41D22966600E3BC29 /* o_X */,
 				02F782C31D22966500E3BC29 /* Products */,
 			);
@@ -65,6 +79,7 @@
 				02F782C91D22966600E3BC29 /* Main.storyboard */,
 				02F782CC1D22966600E3BC29 /* Assets.xcassets */,
 				02F782CE1D22966600E3BC29 /* LaunchScreen.storyboard */,
+				BF04594B1D29CF1A00468380 /* onBoarding.storyboard */,
 				02F782D11D22966600E3BC29 /* Info.plist */,
 			);
 			path = o_X;
@@ -141,6 +156,7 @@
 			files = (
 				02F782D01D22966600E3BC29 /* LaunchScreen.storyboard in Resources */,
 				02F782CD1D22966600E3BC29 /* Assets.xcassets in Resources */,
+				BF04594D1D29CF1A00468380 /* onBoarding.storyboard in Resources */,
 				02F782CB1D22966600E3BC29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,9 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0458EA1D25615000468380 /* UserController.swift in Sources */,
 				02F782C81D22966600E3BC29 /* BoardViewController.swift in Sources */,
+				BF0458EE1D25BA0A00468380 /* RegisterViewController.swift in Sources */,
 				BF04589E1D23D1A100468380 /* OXGame.swift in Sources */,
+				BF0458F01D25BA2100468380 /* LoginViewController.swift in Sources */,
 				BF0458A41D2414FA00468380 /* OXGameController.swift in Sources */,
+				BF0458E81D25607500468380 /* User.swift in Sources */,
 				02F782C61D22966600E3BC29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +196,14 @@
 				02F782CF1D22966600E3BC29 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF04594B1D29CF1A00468380 /* onBoarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF04594C1D29CF1A00468380 /* Base */,
+			);
+			name = onBoarding.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
