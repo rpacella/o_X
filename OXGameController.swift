@@ -14,6 +14,9 @@ class OXGameController {
     init() {
         currentGame = OXGame()
     }
+    
+    var ID: Int = 0
+    var host: String  = ""
 
     
     func getCurrentGame() -> OXGame {
@@ -26,6 +29,10 @@ class OXGameController {
     
     func playMove(cellNum: Int) {
         currentGame.playMove(cellNum)
+    }
+    
+    func getGames(onCompletion: ([OXGame]?, String?) -> Void) {
+        //Return dummy data
     }
 }
 

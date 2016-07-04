@@ -5,6 +5,61 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Title-->
+        <scene sceneID="RDw-X6-MCy">
+            <objects>
+                <tableViewController id="RqW-MN-iGy" customClass="NetworkGamesViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YKe-gH-0Rf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="KXj-AM-3Mi">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KXj-AM-3Mi" id="kJL-pA-WyH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RqW-MN-iGy" id="f4O-v1-7XY"/>
+                            <outlet property="delegate" destination="RqW-MN-iGy" id="OAe-YO-PrR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="Dx8-qJ-cFu">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="0de-2P-DlV">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dismissModalViewController:" destination="RqW-MN-iGy" id="EBq-op-RGZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="YKe-gH-0Rf" id="gNX-rV-ddD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OY0-6m-yMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695" y="-463"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CC8-D6-aml">
+            <objects>
+                <navigationController id="beL-mA-xOG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X3j-ct-fbb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RqW-MN-iGy" kind="relationship" relationship="rootViewController" id="1V1-RU-QQ4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIJ-Jz-rKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-439"/>
+        </scene>
         <!--Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -244,14 +299,25 @@
                                     <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="61E-SM-ncs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-fr-rLF">
+                                <rect key="frame" x="489" y="15" width="91" height="30"/>
+                                <state key="normal" title="Network Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="beL-mA-xOG" kind="modal" id="R54-GL-dsG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="B0B-A0-t49" secondAttribute="trailing" constant="30" id="9IV-lz-rsw"/>
                             <constraint firstItem="B0B-A0-t49" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="AoH-UO-Oth"/>
+                            <constraint firstAttribute="trailing" secondItem="Tcx-fr-rLF" secondAttribute="trailing" constant="20" id="BNk-1X-Yxp"/>
                             <constraint firstAttribute="trailing" secondItem="HaP-ue-fRQ" secondAttribute="trailing" id="BV5-XT-xdk"/>
                             <constraint firstAttribute="bottom" secondItem="HaP-ue-fRQ" secondAttribute="bottom" id="D20-Jx-E1Z"/>
                             <constraint firstItem="Kxw-Gt-mTa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fuy-wr-gwL"/>
+                            <constraint firstItem="Tcx-fr-rLF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="JM0-tX-DML"/>
                             <constraint firstItem="B0B-A0-t49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="Lk4-8Y-m8v"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B0B-A0-t49" secondAttribute="bottom" constant="40" id="NLh-hO-xJt"/>
                             <constraint firstItem="Kxw-Gt-mTa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VlO-If-Rjh"/>

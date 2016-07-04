@@ -123,9 +123,9 @@ class BoardViewController: UIViewController {
     }
 
     @IBAction func logOutButtonPressed(sender: AnyObject) {
-//        let onCompletion = {(string : String?) in
+        let onCompletion = {(string : String?) in
         
-            let storyboard = UIStoryboard(name: "onBoarding", bundle: nil)
+            let storyboard = UIStoryboard(name: string!, bundle: nil)
             
             let viewController = storyboard.instantiateInitialViewController()
             
@@ -135,9 +135,9 @@ class BoardViewController: UIViewController {
             
             window?.rootViewController = viewController
             
-//            }
+            }
         
-//        UserController.sharedInstance.logout(onCompletion())
+        UserController.sharedInstance.logout(onCompletion)
         
     }
 }

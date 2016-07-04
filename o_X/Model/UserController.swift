@@ -56,9 +56,10 @@ class UserController {
     
     func logout (onCompletion: (String?) -> Void) {
         defaults.removeObjectForKey("currentUserEmail")
-        defaults.removeObjectForKey("currentUserPassword")
+       defaults.removeObjectForKey("currentUserPassword")
         self.currentUser = nil
         defaults.synchronize()
+        onCompletion("onBoarding")
         
     }
     

@@ -19,6 +19,7 @@
 		BF0458EE1D25BA0A00468380 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */; };
 		BF0458F01D25BA2100468380 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458EF1D25BA2100468380 /* LoginViewController.swift */; };
 		BF04594D1D29CF1A00468380 /* onBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF04594B1D29CF1A00468380 /* onBoarding.storyboard */; };
+		BF0459731D2AC76300468380 /* NetworkGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0459721D2AC76300468380 /* NetworkGamesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BF0458EF1D25BA2100468380 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF04594C1D29CF1A00468380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/onBoarding.storyboard; sourceTree = "<group>"; };
+		BF0459721D2AC76300468380 /* NetworkGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGamesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		02F782B91D22966500E3BC29 = {
 			isa = PBXGroup;
 			children = (
+				BF0459721D2AC76300468380 /* NetworkGamesViewController.swift */,
 				BF04589D1D23D1A100468380 /* OXGame.swift */,
 				BF0458E71D25607500468380 /* User.swift */,
 				BF0458ED1D25BA0A00468380 /* RegisterViewController.swift */,
@@ -174,6 +177,7 @@
 				BF04589E1D23D1A100468380 /* OXGame.swift in Sources */,
 				BF0458F01D25BA2100468380 /* LoginViewController.swift in Sources */,
 				BF0458A41D2414FA00468380 /* OXGameController.swift in Sources */,
+				BF0459731D2AC76300468380 /* NetworkGamesViewController.swift in Sources */,
 				BF0458E81D25607500468380 /* User.swift in Sources */,
 				02F782C61D22966600E3BC29 /* AppDelegate.swift in Sources */,
 			);
