@@ -153,4 +153,56 @@ func reset() {
     board = [CellType](count: 9, repeatedValue: CellType.Empty)
     
 }
+//     init()  {
+//        
+//        //we are simulating setting our board from the internet
+//        let simulatedBoardStringFromNetwork = "o________" //update this string to different values to test your model serialisation
+//        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
+//        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
+//            print("start\n------------------------------------")
+//            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
+//            
+//            print("done\n------------------------------------")
+//        }   else    {
+//            print("start\n------------------------------------")
+//            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
+//            
+//            print("done\n------------------------------------")
+//        }
+//        
+//    }
+//    
+//    private func deserialiseBoard(boardString : String) -> [CellType]{
+//        var boardArray : [CellType] = []
+//
+//        for char in Array(arrayLiteral: boardString) {
+//            if char == "o" {
+//                boardArray.append(CellType.O)
+//            }
+//            if char == "x" {
+//                boardArray.append(CellType.X)
+//            }
+//            else {
+//                boardArray.append(CellType.Empty)
+//            }
+//        }
+//        return boardArray
+//    }
+//    
+//    private func serialiseBoard() -> String {
+//        var boardString : String = ""
+//        for char in self.board {
+//            if char == CellType.O {
+//                boardString += "o"
+//            }
+//            if char == CellType.X {
+//                boardString += "x"
+//            }
+//            else {
+//                boardString += "_"
+//            }
+//        }
+//        return boardString
+//    }
+
 }

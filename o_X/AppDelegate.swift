@@ -9,11 +9,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-                return true
+        
+        let onCompletion = { (currentUser : User?, error: String?) in
+                if currentUser != nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                self.window!.rootViewController = viewController
+            }
+        }
+        
+        if let persistedEmail : String = defaults.stringForKey("currentUserEmail") {
+            let currentUser = User(email: persistedEmail, password: "")
+            if let persistedPassword : String = defaults.stringForKey("currentUserPassword") {
+                currentUser.password = persistedPassword
+                UserController.sharedInstance.currentUser = currentUser
+                UserController.sharedInstance.register(persistedEmail, password: persistedPassword, onCompletion: onCompletion)
+            }
+            else {return true}
+        }
+        else {return true}
+
+        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

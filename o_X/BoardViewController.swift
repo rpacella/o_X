@@ -123,16 +123,21 @@ class BoardViewController: UIViewController {
     }
 
     @IBAction func logOutButtonPressed(sender: AnyObject) {
+//        let onCompletion = {(string : String?) in
         
-        let storyboard = UIStoryboard(name: "onBoarding", bundle: nil)
+            let storyboard = UIStoryboard(name: "onBoarding", bundle: nil)
+            
+            let viewController = storyboard.instantiateInitialViewController()
+            
+            let application = UIApplication.sharedApplication()
+            
+            let window = application.keyWindow
+            
+            window?.rootViewController = viewController
+            
+//            }
         
-        let viewController = storyboard.instantiateInitialViewController()
-        
-        let application = UIApplication.sharedApplication()
-        
-        let window = application.keyWindow
-        
-        window?.rootViewController = viewController
+//        UserController.sharedInstance.logout(onCompletion())
         
     }
 }

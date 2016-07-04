@@ -10,40 +10,22 @@ import Foundation
 
 class UserController {
     static var sharedInstance = UserController()
-    
     var currentUser: User?
+    var userArray : [User] = []
+    let defaults = NSUserDefaults.standardUserDefaults()
     
-    var userArray : Array<User> = []
-    
-//    let onCompletion = { (currentUser : User?, error: String?) in
-//    
-//        let if errorMessage = error as? String {
-//            let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//            let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Cancel, handler: { (action) in
-//                
-//            })
-//            
-//            alert.addAction(dismissAlertAction)
-//            
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
-//
-//        }
-//    
-//    }
-
-    func register (email: String, password: String, onCompletion: (User?, String?) -> Void) {
-        
+    func register(email: String, password: String, onCompletion: (User?, String?) -> Void) {
         if email == "" {
             onCompletion(nil, "Please enter an email")
-        }
-        if password.characters.count < 6 {
-            onCompletion(nil, "Error because password is too short")
             return
-        } else {
-            for User in userArray {
-                if User == currentUser {
+        }
+        else if password.characters.count < 6 {
+            onCompletion(nil, "Password is too short")
+            return
+        }
+        else {
+            for user in userArray {
+                if user.email == currentUser!.email {
                     onCompletion(nil, "User is already registered")
                     return
                 }
@@ -51,26 +33,33 @@ class UserController {
         }
         self.currentUser = User(email: email, password: password)
         self.userArray.append(self.currentUser!)
-        onCompletion(self.currentUser, nil)
+        onCompletion(self.currentUser!, nil)
+        defaults.setObject(email, forKey: "currentUserEmail")
+        defaults.setObject(password, forKey: "currentUserPassword")
+        defaults.synchronize()
     }
 
     func login (email: String, password: String, onCompletion: (User?, String?) -> Void) {
-        self.currentUser = User(email: email, password: password)
-
-        for User in userArray {
-            if User.email == currentUser!.email && User.password == currentUser!.password {
+        for user in userArray {
+            if user.email == email && user.password == password {
+                currentUser = user
                 onCompletion(currentUser, nil)
-            }
-            else {
-                onCompletion(nil, "Your email or password is incorrect")
+                defaults.setObject(email, forKey: "currentUserEmail")
+                defaults.setObject(password, forKey: "currentUserPassword")
+                defaults.synchronize()
+                return
             }
         }
         
+        onCompletion(nil, "Your email or password is incorrect")
     }
     
     func logout (onCompletion: (String?) -> Void) {
-        self.currentUser!.password = ""
-        self.currentUser!.email = ""
+        defaults.removeObjectForKey("currentUserEmail")
+        defaults.removeObjectForKey("currentUserPassword")
+        self.currentUser = nil
+        defaults.synchronize()
+        
     }
     
 }
