@@ -25,9 +25,68 @@ enum OXGameState {
 
 //model class for OXGame
 class OXGame {
+    
+    
+    init()  {
+        
+        ID = 0
+        host = ""
+        
+        //we are simulating setting our board from the internet
+        let simulatedBoardStringFromNetwork = "o________" //update this string to different values to test your model serialisation
+        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
+        print(simulatedBoardStringFromNetwork)
+        if(simulatedBoardStringFromNetwork == serialiseBoard())    {
+            print("start\n------------------------------------")
+            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
+            
+            print("done\n------------------------------------")
+        }   else
+        {
+            print("start\n------------------------------------")
+            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
+            
+            print("done\n------------------------------------")
+        }
+        
+    }
+    
+    func deserialiseBoard(boardString : String) -> [CellType]{
+        var boardArray : [CellType] = []
+        for char in boardString.characters {
+            if char == "o" {
+                boardArray.append(CellType.O)
+            }
+            else if char == "x" {
+                boardArray.append(CellType.X)
+            }
+            else {
+                boardArray.append(CellType.Empty)
+            }
+        }
+        return boardArray
+    }
+    
+    func serialiseBoard() -> String {
+        var boardString : String = ""
+        for char in self.board {
+            if char == CellType.O {
+                boardString += "o"
+            }
+            else if char == CellType.X {
+                boardString += "x"
+            }
+            else {
+                boardString += "_"
+            }
+        }
+        return boardString
+    }
 
      var board = [CellType](count: 9, repeatedValue: CellType.Empty)
     private var startType : CellType = CellType.X
+    var ID: Int
+    var host: String
     
 //turnCount
 func turnCount() -> Int {
@@ -133,56 +192,5 @@ func reset() {
     
 }
 
-init()  {
-        //we are simulating setting our board from the internet
-        let simulatedBoardStringFromNetwork = "o________" //update this string to different values to test your model serialisation
-        self.board = deserialiseBoard(simulatedBoardStringFromNetwork) //your OXGame board model should get set here
-    print(simulatedBoardStringFromNetwork)
-    if(simulatedBoardStringFromNetwork == serialiseBoard())    {
-            print("start\n------------------------------------")
-            print("congratulations, you successfully deserialised your board and serialized it again correctly. You can send your data model over the internet with this code. 1 step closer to network OX ;)")
-            
-            print("done\n------------------------------------")
-        }   else
-            {
-            print("start\n------------------------------------")
-            print ("your board deserialisation and serialization was not correct :( carry on coding on those functions")
-            
-            print("done\n------------------------------------")
-            }
-        
-}
-    
- func deserialiseBoard(boardString : String) -> [CellType]{
-    var boardArray : [CellType] = []
-        for char in boardString.characters {
-            if char == "o" {
-                boardArray.append(CellType.O)
-            }
-            else if char == "x" {
-                boardArray.append(CellType.X)
-            }
-            else {
-                boardArray.append(CellType.Empty)
-            }
-        }
-        return boardArray
-}
-    
- func serialiseBoard() -> String {
-    var boardString : String = ""
-        for char in self.board {
-            if char == CellType.O {
-                boardString += "o"
-            }
-            else if char == CellType.X {
-                boardString += "x"
-            }
-            else {
-                boardString += "_"
-            }
-        }
-        return boardString
-    }
 
 }

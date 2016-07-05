@@ -37,7 +37,8 @@ class BoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //updateUI("x_o___x_o")
-    newGameButton.hidden = true
+       
+//          newGameButton.hidden = true
     
     }
     
@@ -144,7 +145,7 @@ class BoardViewController: UIViewController {
         UserController.sharedInstance.logout(onCompletion)
         
     }
-    
+        
     func updateUI(boardString: String) {
         
         /*
@@ -159,11 +160,11 @@ class BoardViewController: UIViewController {
          * And Go!
          */
         
-        var board = OXGameController.sharedInstance.getCurrentGame()
+//        var board = OXGameController.sharedInstance.getCurrentGame()
         
-        for cell in board {
-            
-        }
+//        for cell in board {
+//            
+//        }
 
         
         

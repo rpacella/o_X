@@ -14,9 +14,6 @@ class OXGameController {
     init() {
         currentGame = OXGame()
     }
-    
-    var ID: Int = 0
-    var host: String  = ""
 
     
     func getCurrentGame() -> OXGame {
@@ -32,7 +29,11 @@ class OXGameController {
     }
     
     func getGames(onCompletion: ([OXGame]?, String?) -> Void) {
-        //Return dummy data
+//        let onCompletion = {(gameArray: [OXGame]?, error: String?) in
+//            {
+//                
+//            }
+        return
     }
 }
 

@@ -39,6 +39,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YKe-gH-0Rf" id="gNX-rV-ddD"/>
+                        <segue destination="wkE-cV-ZTs" kind="show" identifier="networkSegue" id="xTn-k1-0Rs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OY0-6m-yMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,12 +345,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="237"/>
+            <point key="canvasLocation" x="-883" y="-187"/>
         </scene>
         <!--networkingViewController-->
         <scene sceneID="d3T-lL-edL">
             <objects>
-                <viewController storyboardIdentifier="NetworkViewController" id="wkE-cV-ZTs" userLabel="networkingViewController" customClass="BoardViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NetworkGamesViewController" id="wkE-cV-ZTs" userLabel="networkingViewController" customClass="BoardViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NnH-VN-9eD"/>
                         <viewControllerLayoutGuide type="bottom" id="zXc-gg-rvT"/>
@@ -359,10 +360,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-rm-Uq5" userLabel="Board View">
-                                <rect key="frame" x="30" y="60" width="540" height="500"/>
+                                <rect key="frame" x="30" y="104" width="540" height="456"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPM-JD-s98" userLabel="Button1">
-                                        <rect key="frame" x="155" y="135" width="70" height="70"/>
+                                        <rect key="frame" x="155" y="113" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="i4z-l3-XXN"/>
@@ -376,7 +377,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llr-nI-HdE" userLabel="Button2">
-                                        <rect key="frame" x="235" y="135" width="70" height="70"/>
+                                        <rect key="frame" x="235" y="113" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="DoS-1B-d6n"/>
@@ -390,7 +391,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otn-x9-XOl" userLabel="Button3">
-                                        <rect key="frame" x="315" y="135" width="70" height="70"/>
+                                        <rect key="frame" x="315" y="113" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="pcS-nN-Qxx"/>
@@ -404,7 +405,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWv-K6-MuO" userLabel="Button4">
-                                        <rect key="frame" x="155" y="215" width="70" height="70"/>
+                                        <rect key="frame" x="155" y="193" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="bb2-hk-4kd"/>
@@ -418,7 +419,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXY-GP-wYj" userLabel="Button5">
-                                        <rect key="frame" x="235" y="215" width="70" height="70"/>
+                                        <rect key="frame" x="235" y="193" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="hBB-Er-rjc"/>
@@ -432,7 +433,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D7-Y9-C25" userLabel="Button6">
-                                        <rect key="frame" x="315" y="215" width="70" height="70"/>
+                                        <rect key="frame" x="315" y="193" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Wgm-Xc-dbb"/>
@@ -446,7 +447,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-uZ-Mra" userLabel="Button7">
-                                        <rect key="frame" x="155" y="295" width="70" height="70"/>
+                                        <rect key="frame" x="155" y="273" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="4K6-ZG-Evq"/>
@@ -460,7 +461,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQg-rv-HVt" userLabel="Button8">
-                                        <rect key="frame" x="235" y="295" width="70" height="70"/>
+                                        <rect key="frame" x="235" y="273" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="izN-X6-Ep2"/>
@@ -474,7 +475,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D6-gh-LL9" userLabel="Button9">
-                                        <rect key="frame" x="315" y="295" width="70" height="70"/>
+                                        <rect key="frame" x="315" y="273" width="70" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Dbo-Og-4bd"/>
@@ -488,7 +489,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-5S-jy0" userLabel="top bar">
-                                        <rect key="frame" x="155" y="205" width="230" height="10"/>
+                                        <rect key="frame" x="155" y="183" width="230" height="10"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="230" id="Ufj-1a-Z5d"/>
@@ -496,7 +497,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="66w-OR-n2F" userLabel="bottom bar">
-                                        <rect key="frame" x="155" y="285" width="230" height="10"/>
+                                        <rect key="frame" x="155" y="263" width="230" height="10"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="TmG-pn-hNZ"/>
@@ -504,7 +505,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yUG-aN-yBa" userLabel="left bar">
-                                        <rect key="frame" x="225" y="135" width="10" height="230"/>
+                                        <rect key="frame" x="225" y="113" width="10" height="230"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="MFj-zz-iKC"/>
@@ -512,7 +513,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apx-eu-GFl" userLabel="right bar">
-                                        <rect key="frame" x="305" y="135" width="10" height="230"/>
+                                        <rect key="frame" x="305" y="113" width="10" height="230"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="230" id="JYz-Nx-DpL"/>
@@ -600,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7E-cQ-qyQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="-393"/>
+            <point key="canvasLocation" x="1355" y="-411"/>
         </scene>
     </scenes>
 </document>
