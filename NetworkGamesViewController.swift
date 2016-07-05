@@ -39,7 +39,7 @@ class NetworkGamesViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +54,13 @@ class NetworkGamesViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("tapped row " + String(indexPath.row + 1))
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        self.presentViewController(viewController!, animated: true, completion: nil)
+//        let application = UIApplication.sharedApplication()
+//        let window = application.keyWindow
+//        window?.rootViewController = viewController
+        
     }
 
     /*

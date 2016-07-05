@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
 
@@ -16,6 +17,17 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func registerButtonPressed(sender: AnyObject) {
+        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+        }
         
         let onCompletion = { (currentUser : User?, error: String?) in
             if currentUser == nil {

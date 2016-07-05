@@ -20,6 +20,7 @@
 		BF0458F01D25BA2100468380 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0458EF1D25BA2100468380 /* LoginViewController.swift */; };
 		BF04594D1D29CF1A00468380 /* onBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF04594B1D29CF1A00468380 /* onBoarding.storyboard */; };
 		BF0459731D2AC76300468380 /* NetworkGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0459721D2AC76300468380 /* NetworkGamesViewController.swift */; };
+		BF6558291D2BDA1C00AAC5A0 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6558281D2BDA1C00AAC5A0 /* WebService.swift */; };
 		DADBC7BFED089BAA7805EE6F /* Pods_o_X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44479F4C8D5A40881CF8D95F /* Pods_o_X.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		BF0458EF1D25BA2100468380 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF04594C1D29CF1A00468380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/onBoarding.storyboard; sourceTree = "<group>"; };
 		BF0459721D2AC76300468380 /* NetworkGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGamesViewController.swift; sourceTree = "<group>"; };
+		BF6558281D2BDA1C00AAC5A0 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				02F782C51D22966600E3BC29 /* AppDelegate.swift */,
+				BF6558281D2BDA1C00AAC5A0 /* WebService.swift */,
 				02F782C71D22966600E3BC29 /* BoardViewController.swift */,
 				02F782C91D22966600E3BC29 /* Main.storyboard */,
 				02F782CC1D22966600E3BC29 /* Assets.xcassets */,
@@ -254,6 +257,7 @@
 				BF0458A41D2414FA00468380 /* OXGameController.swift in Sources */,
 				BF0459731D2AC76300468380 /* NetworkGamesViewController.swift in Sources */,
 				BF0458E81D25607500468380 /* User.swift in Sources */,
+				BF6558291D2BDA1C00AAC5A0 /* WebService.swift in Sources */,
 				02F782C61D22966600E3BC29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

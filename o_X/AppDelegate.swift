@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
         let onCompletion = { (currentUser : User?, error: String?) in
                 if currentUser != nil {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if let persistedEmail : String = defaults.stringForKey("currentUserEmail") {
-            let currentUser = User(email: persistedEmail, password: "")
+            let currentUser = User(email: persistedEmail, password: "", token: "", client: "")
             if let persistedPassword : String = defaults.stringForKey("currentUserPassword") {
                 currentUser.password = persistedPassword
                 UserController.sharedInstance.currentUser = currentUser
@@ -34,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {return true}
 
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -57,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 
 
 }

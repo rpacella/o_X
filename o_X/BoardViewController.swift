@@ -28,11 +28,15 @@ class BoardViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     
     @IBOutlet weak var boardView: UIView!
-        
+    
+    @IBOutlet weak var messagingArea: UILabel!
+    
+    var networkMode :Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//updateUI("x_o___x_o")
     newGameButton.hidden = true
     
     }
@@ -139,6 +143,31 @@ class BoardViewController: UIViewController {
         
         UserController.sharedInstance.logout(onCompletion)
         
+    }
+    
+    func updateUI(boardString: String) {
+        
+        /*
+         * BoardViewController's updateUI() function
+         * Although we haven't completed full network functionality yet,
+         * this function will come in handy when we have to display our opponents moves
+         * that we obtain from the networking layers (more on that later)
+         * For now, you are required to implement this function in connection with Activity 1 from todays class
+         * Hint number 1: This function must set the values of O and X on the board, based on the games board array values. Does this kind of remind you of the resetBoard or newGameTapped function???
+         * Hint number 2: if you set your board array to private in the OXGame class, maybe you should set it now to 'not private' ;)
+         * Hint number 3: call this function in BoardViewController's viewDidLoad function to see it execute what board was set in the game's initialiser on your screen!
+         * And Go!
+         */
+        
+        var board = OXGameController.sharedInstance.getCurrentGame()
+        
+        for cell in board {
+            
+        }
+
+        
+        
+
     }
 }
 
