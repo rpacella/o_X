@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Available Games-->
         <scene sceneID="RDw-X6-MCy">
             <objects>
                 <tableViewController id="RqW-MN-iGy" customClass="NetworkGamesViewController" customModule="o_X" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="RqW-MN-iGy" id="OAe-YO-PrR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Dx8-qJ-cFu">
+                    <navigationItem key="navigationItem" title="Available Games" id="Dx8-qJ-cFu">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="0de-2P-DlV">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -38,7 +38,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fzP-bf-Bpv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="YKe-gH-0Rf" id="gNX-rV-ddD"/>
                         <segue destination="wkE-cV-ZTs" kind="show" identifier="networkSegue" id="xTn-k1-0Rs"/>
                     </connections>
                 </tableViewController>
@@ -330,16 +329,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="boardView" destination="B0B-A0-t49" id="q1a-yu-0TX"/>
-                        <outlet property="button0" destination="qmo-CQ-Afb" id="01X-9k-wpq"/>
-                        <outlet property="button1" destination="m3f-cx-VoX" id="lj8-YS-mmm"/>
-                        <outlet property="button2" destination="NVJ-ys-DkB" id="boQ-9d-ZEU"/>
-                        <outlet property="button3" destination="le5-ah-3DM" id="rBy-ag-GR2"/>
-                        <outlet property="button4" destination="QE7-1B-tVb" id="9Nv-Pa-iI8"/>
-                        <outlet property="button5" destination="O3S-ak-YYW" id="nD4-KU-Qbm"/>
-                        <outlet property="button6" destination="NJl-hO-rcI" id="q2L-XC-I5O"/>
-                        <outlet property="button7" destination="huB-P8-KFC" id="rC9-fK-Ghy"/>
-                        <outlet property="button8" destination="X3p-aF-JfQ" id="n8b-YC-v8f"/>
+                        <outlet property="boardView" destination="B0B-A0-t49" id="B6j-ao-LbI"/>
                         <outlet property="newGameButton" destination="HaP-ue-fRQ" id="044-ds-ega"/>
                     </connections>
                 </viewController>
@@ -359,6 +349,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o_X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmA-GF-bBX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="diU-nG-QZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-rm-Uq5" userLabel="Board View">
                                 <rect key="frame" x="30" y="104" width="540" height="456"/>
                                 <subviews>
@@ -551,16 +551,6 @@
                                     <constraint firstItem="mXY-GP-wYj" firstAttribute="top" secondItem="Eje-5S-jy0" secondAttribute="bottom" id="xwM-kp-bSo"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o_X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmA-GF-bBX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="diU-nG-QZS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc2-wa-t4W" userLabel="messagingArea">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <constraints>
@@ -585,17 +575,10 @@
                             <constraint firstItem="fUP-rm-Uq5" firstAttribute="leading" secondItem="dej-tq-Zy8" secondAttribute="leading" constant="30" id="w3n-DR-egE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="o_X" id="Fv2-qT-9Wy"/>
                     <connections>
                         <outlet property="boardView" destination="fUP-rm-Uq5" id="nd3-zz-Kga"/>
-                        <outlet property="button0" destination="oPM-JD-s98" id="RSq-Az-wgD"/>
-                        <outlet property="button1" destination="llr-nI-HdE" id="WuC-f3-Rs6"/>
-                        <outlet property="button2" destination="otn-x9-XOl" id="he8-Jj-Vix"/>
-                        <outlet property="button3" destination="rWv-K6-MuO" id="tuJ-iS-46m"/>
-                        <outlet property="button4" destination="mXY-GP-wYj" id="gia-aS-djT"/>
-                        <outlet property="button5" destination="2D7-Y9-C25" id="at4-Wo-XqB"/>
-                        <outlet property="button6" destination="h5a-uZ-Mra" id="qPx-Ks-Yeg"/>
-                        <outlet property="button7" destination="KQg-rv-HVt" id="IVF-cm-ma5"/>
-                        <outlet property="button8" destination="1D6-gh-LL9" id="wz7-Bo-7a0"/>
+                        <outlet property="messageArea" destination="gc2-wa-t4W" id="4hC-G9-REo"/>
                         <outlet property="messagingArea" destination="gc2-wa-t4W" id="LdH-xr-07c"/>
                     </connections>
                 </viewController>

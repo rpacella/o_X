@@ -56,6 +56,7 @@ class NetworkGamesViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
        self.performSegueWithIdentifier("networkSegue", sender: self)
+        return
         
     }
     
