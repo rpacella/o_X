@@ -10,8 +10,7 @@ import UIKit
 
 class NetworkGamesViewController: UITableViewController {
     
-    private var array : [String] = ["Row 1", "Row 2", "Row 3", "Row 4", "Row 5", "Row 6", "Row 7"]
-   
+    var games = [OXGame]()
     
     @IBAction func dismissModalViewController(sender: AnyObject) {
         
@@ -22,12 +21,13 @@ class NetworkGamesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        OXGameController.sharedInstance.getGameList { games, message in
+            if let games = games {
+                self.games = games
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,17 +39,17 @@ class NetworkGamesViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return games.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
-        cell.textLabel?.text = String(array[indexPath.row])
+        cell.textLabel?.text = "ID:  \(games[indexPath.row].ID) Host \(games[indexPath.row].host)"
         return cell
     }
     

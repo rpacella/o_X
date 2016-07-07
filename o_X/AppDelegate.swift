@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let onCompletion = { (currentUser : User?, error: String?) in
-                if currentUser != nil {
+            if currentUser != nil {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateInitialViewController()
                 self.window!.rootViewController = viewController
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let persistedPassword : String = defaults.stringForKey("currentUserPassword") {
                 currentUser.password = persistedPassword
                 UserController.sharedInstance.currentUser = currentUser
-                UserController.sharedInstance.register(persistedEmail, password: persistedPassword, onCompletion: onCompletion)
+                UserController.sharedInstance.login(persistedEmail, password: persistedPassword, onCompletion: onCompletion)
             }
             else {return true}
         }

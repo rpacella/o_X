@@ -35,6 +35,7 @@ class BoardViewController: UIViewController {
         for subView in boardView.subviews {
             if let button = subView as? UIButton {
                 button.setTitle("", forState: .Normal)
+                button.enabled = true
             }
         }
                 newGameButton?.hidden = true
@@ -43,10 +44,12 @@ class BoardViewController: UIViewController {
     
     @IBAction func cellButtonPressed(sender: AnyObject) {
   
-        var player = OXGameController.sharedInstance.playMove(sender.tag)
+        let player = OXGameController.sharedInstance.playMove(sender.tag)
         sender.setTitle(player.rawValue, forState: .Normal)
         
-//        sender.enabled = false
+        if let button = sender as? UIButton {
+            button.enabled = false
+        }
         
         print(OXGameController.sharedInstance.getCurrentGame().serialiseBoard())
         
@@ -66,13 +69,9 @@ class BoardViewController: UIViewController {
                 
                 self.presentViewController(alert, animated: true, completion: nil)
                 
-                for subview in boardView.subviews {
-                    if let button = subview as? UIButton {
-                        button.enabled = false
-                    }
-                }
             }
-                
+        }
+            
             else if (OXGameController.sharedInstance.getCurrentGame().whoJustPlayed() == CellType.O){
                 let alert = UIAlertController(title: "Game Over", message: "'O' Won!", preferredStyle: UIAlertControllerStyle.Alert)
                 
@@ -84,7 +83,11 @@ class BoardViewController: UIViewController {
                 alert.addAction(dismissAlertAction)
                 
                 self.presentViewController(alert, animated: true, completion: nil)
-                
+                for subview in boardView.subviews {
+                    if let button = subview as? UIButton {
+                    button.enabled = false
+                }
+    
             }
         }
         
@@ -99,7 +102,12 @@ class BoardViewController: UIViewController {
             alert.addAction(dismissAlertAction)
             
             self.presentViewController(alert, animated: true, completion: nil)
-            
+    
+        for subview in boardView.subviews {
+            if let button = subview as? UIButton {
+            button.enabled = false
+    }
+
         }
 
     }
@@ -126,22 +134,9 @@ class BoardViewController: UIViewController {
         
     func updateUI(boardString: String) {
         
-        /*
-         * BoardViewController's updateUI() function
-         * Although we haven't completed full network functionality yet,
-         * this function will come in handy when we have to display our opponents moves
-         * that we obtain from the networking layers (more on that later)
-         * For now, you are required to implement this function in connection with Activity 1 from todays class
-         * Hint number 1: This function must set the values of O and X on the board, based on the games board array values. Does this kind of remind you of the resetBoard or newGameTapped function???
-         * Hint number 2: if you set your board array to private in the OXGame class, maybe you should set it now to 'not private' ;)
-         * Hint number 3: call this function in BoardViewController's viewDidLoad function to see it execute what board was set in the game's initialiser on your screen!
-         * And Go!
-         */
         let board = OXGameController.sharedInstance.getCurrentGame().deserialiseBoard(boardString)
     OXGameController.sharedInstance.getCurrentGame().board = board
         
-//        print(board)
-//        print(OXGameController.sharedInstance.getCurrentGame().board)
         var count = 0
         for subView in boardView.subviews {
             if let button = subView as? UIButton {
@@ -158,3 +153,4 @@ class BoardViewController: UIViewController {
 
 
 
+}

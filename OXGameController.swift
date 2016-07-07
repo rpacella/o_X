@@ -7,11 +7,11 @@
 
 import Foundation
 
-class OXGameController {
+class OXGameController: WebService {
     static let sharedInstance = OXGameController()
     private var currentGame : OXGame
     
-    init() {
+    override init() {
         currentGame = OXGame()
     }
 
@@ -35,6 +35,38 @@ class OXGameController {
 //            }
         return
     }
+    
+    func getGameList(onCompletion onCompletion: ([OXGame]?, String?) -> Void) {
+                //remember a request has 4 things:
+        //1: A endpoint
+        //2: A method
+        //3: input data (optional)
+        //4: A response
+    
+        
+        let request = self.createMutableRequest(NSURL(string: "https://ox-backend.herokuapp.com/games"), method: "GET", parameters: nil)
+        self.executeRequest(request, requestCompletionFunction: {(responseCode, json) in
+            
+            var gamesArray : [OXGame] = []
+            
+            
+            if (responseCode == 200)   {
+                for games in json.arrayValue {
+                    let game = OXGame()
+                    game.ID = games["id"].intValue
+                    game.host = games["host_user"]["uid"].stringValue
+                    gamesArray.append(game)
+                    
+                }
+                onCompletion(gamesArray, nil)
+                
+            }   else    {
+                
+                let errorMessage = json["errors"]["full_messages"][0].stringValue
+                onCompletion(nil,errorMessage)
+            }
+        })
+        //we are now done with the registerUser function. Note that this function doesnt return anything. But because of the viewControllerCompletionFunction closure we are given as an input parameter, we can set in motion a function in the calling class when it is needed.
+    }
+
 }
-
-
