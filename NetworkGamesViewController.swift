@@ -12,6 +12,27 @@ class NetworkGamesViewController: UITableViewController {
     
     var games = [OXGame]()
     
+    @IBAction func hostGameButtonPressed(sender: AnyObject) {
+        OXGameController.sharedInstance.hostGame({ newGame, message in
+            if newGame != nil {
+                self.performSegueWithIdentifier("networkSegue", sender: self)
+            }
+            else if message != nil {
+                let errorMessage : String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in
+                })
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                return
+                
+            }
+            
+            return
+        })
+
+    }
+    
     @IBAction func dismissModalViewController(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -26,17 +47,19 @@ class NetworkGamesViewController: UITableViewController {
                 self.games = games
                 self.tableView.reloadData()
             }
+            else {
+                let errorMessage : String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in
+                })
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                return
+            }
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -54,9 +77,24 @@ class NetworkGamesViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-       self.performSegueWithIdentifier("networkSegue", sender: self)
-        return
+        print(indexPath.row)
+        OXGameController.sharedInstance.joinGame(indexPath.row, gameArray: games, onCompletion: { newGame, message in
+            if newGame != nil {
+             self.performSegueWithIdentifier("networkSegue", sender: self)
+            }
+            else if message != nil {
+                let errorMessage : String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in
+                })
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                return
+
+            }
+
+            return
+        })
         
     }
     
@@ -65,6 +103,5 @@ class NetworkGamesViewController: UITableViewController {
             destinationVC.networkMode = true
         }
     }
- 
 
 }

@@ -15,17 +15,34 @@ class BoardViewController: UIViewController {
     
     @IBOutlet weak var messageArea: UILabel!
     
+    @IBOutlet weak var gameStateLabel: UILabel!
+    
     var networkMode :Bool = false
     
     
+    @IBAction func refreshGamePushed(sender: AnyObject) {
+            OXGameController.sharedInstance.getGame { (updatedGame, message) in
+            if updatedGame != nil {
+                print(OXGameController.sharedInstance.getCurrentGame().serialiseBoard())
+                self.updateUI()
+            }
+            else if message != nil {
+                let errorMessage : String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in
+                })
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if networkMode {updateUI("xo____x_o")}
-       
-//          newGameButton.hidden = true
-//        messageArea.text = OXGameController.sharedInstance.getCurrentGame().state()
-    
+//        gameStateLabel.text = OXGameController.sharedInstance.getCurrentGame().gameState.rawValue
     }
+    
+    
     
     
     @IBAction func newGameButtonPressed(sender: UIButton) {
@@ -42,10 +59,40 @@ class BoardViewController: UIViewController {
 
     }
     
+    
+    @IBAction func cancelGameButtonPressed(sender: AnyObject) {
+        OXGameController.sharedInstance.cancelGame({ message in
+            if message != nil {
+                let errorMessage : String = message!
+                let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in })
+                errorAlert.addAction(dismissErrorAlert)
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+            else if message == nil {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        })
+    }
+
     @IBAction func cellButtonPressed(sender: AnyObject) {
   
         let player = OXGameController.sharedInstance.playMove(sender.tag)
         sender.setTitle(player.rawValue, forState: .Normal)
+        
+        if networkMode {
+            
+            OXGameController.sharedInstance.networkPlayMove({message in
+              
+                if message != nil {
+                    let errorMessage : String = message!
+                    let errorAlert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                    let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) in })
+                    errorAlert.addAction(dismissErrorAlert)
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+                })
+        }
         
         if let button = sender as? UIButton {
             button.enabled = false
@@ -68,9 +115,13 @@ class BoardViewController: UIViewController {
                 alert.addAction(dismissAlertAction)
                 
                 self.presentViewController(alert, animated: true, completion: nil)
+                for subview in boardView.subviews {
+                    if let button = subview as? UIButton {
+                        button.enabled = false
+                    }
                 
+                }
             }
-        }
             
             else if (OXGameController.sharedInstance.getCurrentGame().whoJustPlayed() == CellType.O){
                 let alert = UIAlertController(title: "Game Over", message: "'O' Won!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -86,11 +137,11 @@ class BoardViewController: UIViewController {
                 for subview in boardView.subviews {
                     if let button = subview as? UIButton {
                     button.enabled = false
-                }
+                    }
     
+                }
             }
         }
-        
         
         if gameState == OXGameState.Tie {
             
@@ -103,13 +154,14 @@ class BoardViewController: UIViewController {
             
             self.presentViewController(alert, animated: true, completion: nil)
     
-        for subview in boardView.subviews {
-            if let button = subview as? UIButton {
-            button.enabled = false
-    }
+            for subview in boardView.subviews {
+                if let button = subview as? UIButton {
+                    button.enabled = false
+                }
+
+            }
 
         }
-
     }
 
 
@@ -126,31 +178,22 @@ class BoardViewController: UIViewController {
             
             window?.rootViewController = viewController
             
-            }
+        }
         
         UserController.sharedInstance.logout(onCompletion)
         
-    }
+        }
         
-    func updateUI(boardString: String) {
-        
-        let board = OXGameController.sharedInstance.getCurrentGame().deserialiseBoard(boardString)
-    OXGameController.sharedInstance.getCurrentGame().board = board
-        
-        var count = 0
+func updateUI() {
+        var board = OXGameController.sharedInstance.getCurrentGame().board
+    
         for subView in boardView.subviews {
             if let button = subView as? UIButton {
-                button.setTitle(board[count].rawValue, forState: .Normal)
+                button.setTitle(board[button.tag].rawValue, forState: .Normal)
             }
-            count += 1
         }
 
         
 
     }
-}
-
-
-
-
 }

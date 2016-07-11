@@ -30,6 +30,7 @@ class OXGame {
     var ID: Int
     var host: String
     var board : [CellType] = []
+    var gameState = OXGameState.open
     
     init()  {
         
@@ -87,10 +88,6 @@ class OXGame {
         }
         return boardString
     }
-
-
-
-
     
 //turnCount
 func turnCount() -> Int {
